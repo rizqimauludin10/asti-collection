@@ -3,7 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Asti Collection</title>
+    <title>Asti Collection - Jasa Jahit Kubu Raya</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="icon" type="image/x-icon" href="images/logo_ico_2.ico" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -12,219 +25,25 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@400;700&display=swap"
       rel="stylesheet"
     />
-
     <!-- AOS CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
     />
-
-    <style>
-      /* Menghilangkan margin dan padding default pada body dan html */
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-      }
-
-      /* Navbar styling */
-      .navbar {
-        position: fixed;
-        width: 100%;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-        transition: background-color 0.3s, padding 0.3s;
-        background-color: transparent;
-      }
-      .navbar .navbar-brand,
-      .navbar .nav-link {
-        color: white !important;
-        transition: color 0.3s;
-        font-family: "Poppins", sans-serif;
-        font-weight: 600; /* Biar agak bold */
-        letter-spacing: 0.5px; /* Biar lebih rapi */
-      }
-      .navbar.scrolled {
-        background-color: #8541bd;
-        padding: 10px 0;
-      }
-      .navbar.scrolled .navbar-brand,
-      .navbar.scrolled .nav-link {
-        color: white !important;
-      }
-
-      /* Judul Section */
-      h1,
-      h2,
-      h3 {
-        font-family: "Playfair Display", serif;
-        font-weight: 700;
-      }
-
-      /* Body Text (Paragraf, Deskripsi) */
-      body,
-      p {
-        font-family: "Poppins", sans-serif;
-        font-weight: 400;
-        line-height: 1.6;
-      }
-
-      /* Hero section */
-      .hero {
-        position: relative;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        text-align: center;
-        overflow: hidden;
-      }
-
-      .slideshow {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-
-      .no-bootstrap {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-      }
-
-      .slide {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        opacity: 0;
-        transition: opacity 1.5s ease-in-out;
-      }
-
-      .slide.active {
-        opacity: 1;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 1;
-      }
-
-      .hero .container {
-        position: relative;
-        z-index: 2;
-      }
-
-      /* Section styling */
-      .section {
-        padding: 60px 0;
-      }
-
-      .footer {
-        position: relative;
-        background: linear-gradient(to bottom, #8016cb, #380562);
-        color: white;
-        text-align: center;
-        padding: 20px 0;
-        overflow: hidden;
-        height: 200px;
-      }
-
-      .footer::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='24' viewBox='0 0 88 24'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='autumn' fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath d='M10 0l30 15 2 1V2.18A10 10 0 0 0 41.76 0H39.7a8 8 0 0 1 .3 2.18v10.58L14.47 0H10zm31.76 24a10 10 0 0 0-5.29-6.76L4 1 2 0v13.82a10 10 0 0 0 5.53 8.94L10 24h4.47l-6.05-3.02A8 8 0 0 1 4 13.82V3.24l31.58 15.78A8 8 0 0 1 39.7 24h2.06zM78 24l2.47-1.24A10 10 0 0 0 86 13.82V0l-2 1-32.47 16.24A10 10 0 0 0 46.24 24h2.06a8 8 0 0 1 4.12-4.98L84 3.24v10.58a8 8 0 0 1-4.42 7.16L73.53 24H78zm0-24L48 15l-2 1V2.18A10 10 0 0 1 46.24 0h2.06a8 8 0 0 0-.3 2.18v10.58L73.53 0H78z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        background-size: 8%;
-        background-position: center;
-        background-repeat: repeat;
-        opacity: 0.2; /* Atur transparansi motif */
-        z-index: 0;
-      }
-
-      .service-card {
-        background: #e6d1f2;
-        border: 2px solid #d4af37;
-        padding: 20px;
-        border-radius: 10px;
-        transition: 0.3s;
-      }
-
-      .service-card:hover {
-        background: #d4af37;
-        color: white;
-        transform: scale(1.05);
-      }
-
-      .gallery img {
-        width: 100%;
-        border-radius: 10px;
-        transition: 0.3s;
-        border: 3px solid #6a0dad;
-      }
-
-      .gallery img:hover {
-        transform: scale(1.05);
-      }
-
-      .btn-primary {
-        background-color: #d4af37;
-        border: none;
-      }
-
-      .btn-primary:hover {
-        background-color: #b8860b;
-      }
-
-      /* Set images to fit their container and maintain aspect ratio */
-      .carousel-inner img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        margin-bottom: 60px;
-        margin-top: 60px;
-      }
-
-      /* Menambahkan padding pada card-body agar teks tidak terlalu mepet */
-      .card-body {
-        padding: 50px; /* Menambah jarak antara teks dan tepi card */
-      }
-
-      .card:hover {
-        transform: translateY(-10px); /* Card sedikit terangkat */
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Menambahkan shadow */
-      }
-      /* Memastikan gambar di dalam card memiliki ukuran tetap */
-      .card-img-top {
-        height: 300px; /* Tentukan tinggi gambar yang baku */
-        object-fit: cover; /* Memastikan gambar menutupi area gambar tanpa terdistorsi */
-      }
-    </style>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">Asti Collection</a>
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img
+            src="images/logo_asti_2.png"
+            alt="Logo Asti Collection"
+            height="60"
+            class="me-2"
+          />
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -236,7 +55,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#beranda">Beranda</a>
+              <a class="nav-link" href="#hero">Beranda</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#layanan">Layanan</a>
@@ -264,26 +83,34 @@
       <div class="container">
         <h1>Selamat Datang di Asti Collection</h1>
         <p>Menjahit dengan penuh cinta dan kualitas terbaik</p>
-        <a href="#kontak" class="btn btn-primary mt-3">Hubungi Kami</a>
+        <a href="#kontak" class="btn btn-primary mt-3 call-anim">
+          Hubungi Kami
+          <div class="arrow-container">
+            <svg viewBox="0 0 24 24"><polygon points="12,16 6,10 18,10" /></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,16 6,10 18,10" /></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,16 6,10 18,10" /></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,16 6,10 18,10" /></svg>
+          </div>
+        </a>
       </div>
     </section>
 
-    <section id="layanan" class="section text-center">
+    <section
+      id="layanan"
+      class="section text-center"
+      data-aos="fade-up"
+      data-aos-duration="2000"
+    >
       <div class="container">
         <h2>Layanan Kami</h2>
-        <h5 class="mb-4">
+        <p class="layanan-desc">
           Kami menyediakan berbagai layanan jahit berkualitas tinggi untuk
           memenuhi kebutuhan fashion Anda.
-        </h5>
+        </p>
 
-        <div class="row mt-4">
-          <div
-            class="col-md-4"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="200"
-          >
-            <div class="card">
+        <div class="row">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card">
               <img src="a.jpg" class="card-img-top" alt="Jahit Baju" />
               <div class="card-body">
                 <h5 class="card-title">Jahit Baju</h5>
@@ -295,13 +122,8 @@
             </div>
           </div>
 
-          <div
-            class="col-md-4"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="200"
-          >
-            <div class="card">
+          <div class="col-md-4">
+            <div class="service-card">
               <img src="b.jpg" class="card-img-top" alt="Permak Pakaian" />
               <div class="card-body">
                 <h5 class="card-title">Permak Pakaian</h5>
@@ -313,13 +135,8 @@
             </div>
           </div>
 
-          <div
-            class="col-md-4"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="200"
-          >
-            <div class="card">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card">
               <img src="c.jpg" class="card-img-top" alt="Desain Eksklusif" />
               <div class="card-body">
                 <h5 class="card-title">Desain Eksklusif</h5>
@@ -335,76 +152,49 @@
     </section>
 
     <!-- Galeri Section -->
-    <section id="galeri" class="section bg-light text-center">
+    <section
+      id="galeri"
+      class="section bg-offwhite text-center"
+      data-aos="fade-up"
+      data-aos-duration="2000"
+    >
       <div class="container">
         <h2>Galeri</h2>
-
-        <!-- Horizontal Carousel for Gallery -->
-        <div
-          id="gallerySectionCarousel"
-          class="carousel"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="row">
-                <div class="col-md-4">
-                  <img src="a.jpg" class="d-block w-100" alt="Gambar 1" />
-                </div>
-                <div class="col-md-4">
-                  <img src="b.jpg" class="d-block w-100" alt="Gambar 2" />
-                </div>
-                <div class="col-md-4">
-                  <img src="c.jpg" class="d-block w-100" alt="Gambar 3" />
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-4">
-                  <img src="a.jpg" class="d-block w-100" alt="Gambar 4" />
-                </div>
-                <div class="col-md-4">
-                  <img src="b.jpg" class="d-block w-100" alt="Gambar 5" />
-                </div>
-                <div class="col-md-4">
-                  <img src="c.jpg" class="d-block w-100" alt="Gambar 6" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Navigation Controls -->
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#galleryCarousel"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#galleryCarousel"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+        <p class="gallery-desc">Momen terbaik kami dalam bingkai.</p>
+        <div class="gallery-grid">
+          <img src="a.jpg" alt="Gambar 1" class="gallery-img" />
+          <img src="b.jpg" alt="Gambar 2" class="gallery-img" />
+          <img src="c.jpg" alt="Gambar 3" class="gallery-img" />
+          <img src="a.jpg" alt="Gambar 4" class="gallery-img" />
+          <img src="b.jpg" alt="Gambar 5" class="gallery-img" />
+          <img src="c.jpg" alt="Gambar 6" class="gallery-img" />
+          <img src="a.jpg" alt="Gambar 7" class="gallery-img" />
+          <img src="b.jpg" alt="Gambar 8" class="gallery-img" />
         </div>
+      </div>
+
+      <!-- Lightbox -->
+      <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-img" src="" alt="Preview" />
       </div>
     </section>
 
     <!-- Kontak Section -->
-    <section id="kontak" class="section text-center">
+    <section id="kontak" class="section bg-soft-purple text-center">
       <div class="container">
         <h2>Kontak Kami</h2>
         <p>Hubungi kami untuk informasi lebih lanjut.</p>
-        <a href="https://wa.me/6281234567890" class="btn btn-primary"
-          >WhatsApp Kami</a
+        <a
+          href="https://wa.me/6289685191803"
+          target="_blank"
+          class="btn btn-primary"
         >
+          <i class="fab fa-whatsapp"></i> WhatsApp Kami
+        </a>
+
+        <hr class="kontak-divider" />
+
         <div class="mt-4">
           <h4>Lokasi Kami</h4>
           <iframe
@@ -421,8 +211,49 @@
 
     <!-- Footer -->
     <footer class="footer">
-      <p>&copy; 2025 Asti Collection. All Rights Reserved.</p>
+      <div class="container-footer">
+        <div class="footer-col logo-col">
+          <img src="images/logo_asti_2.png" alt="Logo" class="footer-logo" />
+          <p>Menjadi pilihan terbaik untuk setiap penampilan Anda.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="#hero">Beranda</a></li>
+            <li><a href="#layanan">Layanan</a></li>
+            <li><a href="#galeri">Galeri</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontak</h4>
+          <ul>
+            <li><i class="fas fa-envelope"></i> rizqimauludin10@gmail.com</li>
+            <li><i class="fab fa-whatsapp"></i> +62 8953 2350 9765</li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i> Kabupaten Kubu Raya, Kalbar
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Asti Collection. All Rights Reserved.</p>
+      </div>
     </footer>
+
+    <button id="scrollTopBtn" title="Kembali ke atas">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        fill="white"
+        viewBox="0 0 24 24"
+      >
+        <path d="M12 2L4 10h5v10h6V10h5z" />
+      </svg>
+    </button>
+
+    <script src="js/script.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AOS JS -->
@@ -431,41 +262,31 @@
     <script>
       AOS.init();
     </script>
-    <script>
-      // Menangkap elemen navbar
-      const navbar = document.querySelector(".navbar");
 
-      // Menambahkan event listener untuk mendeteksi scroll
-      window.addEventListener("scroll", () => {
-        // Jika halaman di-scroll lebih dari 50px, tambahkan kelas 'scrolled'
-        if (window.scrollY > 50) {
-          navbar.classList.add("scrolled");
-        } else {
-          navbar.classList.remove("scrolled");
-        }
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const galleryImages = document.querySelectorAll(".gallery-img");
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.querySelector(".lightbox-img");
+        const closeBtn = document.querySelector(".close-lightbox");
+
+        galleryImages.forEach((img) => {
+          img.addEventListener("click", () => {
+            lightboxImg.src = img.src;
+            lightbox.classList.add("show");
+          });
+        });
+
+        closeBtn.addEventListener("click", () => {
+          lightbox.classList.remove("show");
+        });
+
+        lightbox.addEventListener("click", (e) => {
+          if (e.target === lightbox) {
+            lightbox.classList.remove("show");
+          }
+        });
       });
-    </script>
-
-    <script>
-      let slides = document.querySelectorAll(".slide");
-      let currentIndex = 0;
-      let totalSlides = slides.length;
-
-      function nextSlide() {
-        let nextIndex = (currentIndex + 1) % totalSlides;
-
-        slides[nextIndex].classList.add("active");
-
-        setTimeout(() => {
-          slides[currentIndex].classList.remove("active");
-          currentIndex = nextIndex;
-        }, 50);
-      }
-
-      // Pastikan slide pertama langsung muncul
-      slides[currentIndex].classList.add("active");
-
-      setInterval(nextSlide, 5000);
     </script>
   </body>
 </html>
